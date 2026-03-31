@@ -1,0 +1,55 @@
+@import "tailwindcss";
+:root {
+  --background: #ffffff;
+  --foreground: var(--halo-black);
+  --halo-teal: #005671;
+  --halo-teal10: #E6F0F4;
+  --halo-gray: #555559;
+  --halo-gray20: #DDDDE0;
+  --halo-black: #141416;
+  --halo-white: #FFFFFF;
+  --topbar-height: 36px;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-halo-teal: var(--halo-teal);
+  --color-halo-teal10: var(--halo-teal10);
+  --color-halo-gray: var(--halo-gray);
+  --color-halo-gray20: var(--halo-gray20);
+  --color-halo-black: var(--halo-black);
+  --color-halo-white: var(--halo-white);
+  --font-sans: 'DM Sans', sans-serif;
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (max-width: 768px) {
+  :root {
+    --topbar-height: 0px;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-weight: 400;
+  color: var(--foreground);
+  background: var(--background);
+}
+
+/* Utility: display font shortcut */
+.font-display {
+  font-family: 'Sunsive', sans-serif;
+}
