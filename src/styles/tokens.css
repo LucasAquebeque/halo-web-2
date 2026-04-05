@@ -1,0 +1,19 @@
+/* /src/styles/tokens.css */
+
+:root {
+    /* 🎨 COLORS */
+    --halo-teal: #005671;
+    --halo-black: #141416;
+    --halo-grey: #555559;
+    --halo-white: #ffffff;
+
+    /* RADIUS */
+    --radius-sharp: 2px;
+
+    /* LAYOUT */
+    --container-max: 1280px;
+
+    /* TYPO */
+    --font-display: 'Creato Display', sans-serif;
+    --font-body: 'DM Sans', sans-serif;
+}
