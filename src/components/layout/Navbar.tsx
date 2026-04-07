@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 
 export default function Navbar() {
-  const [scrolled, setScrolled] = useState(false);
+  const [scrolled, setScrolled] = useState(true);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -17,20 +17,24 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed top-10 left-0 w-full z-50 transition-all duration-300 ${
-        scrolled ? "bg-black/80 backdrop-blur-md" : "bg-transparent"
-      }`}
+      className={`fixed top-[36px] left-0 w-full z-50 transition-all duration-300 ${scrolled ? "bg-black/80 backdrop-blur-md" : "bg-transparent"
+        }`}
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-[70px]">
-        
+
         {/* LOGO */}
-        <div className="relative w-[260px] md:w-[300px] h-[70px] md:h-[80px] -ml-6 md:-ml-10">
+        <div
+          className={`relative transition-all duration-500 ${scrolled
+              ? "w-[220px] md:w-[260px] h-[55px] md:h-[65px]"
+              : "w-[280px] md:w-[340px] h-[75px] md:h-[85px]"
+            }`}
+        >
           <Image
             src="/logo_white_clean.png"
             alt="Halo"
             fill
-            sizes="(max-width: 768px) 320px, 360px"
-            className="object-contain"
+            sizes="(max-width: 768px) 320px, 460px"
+            className="object-contain object-left"
             priority
           />
         </div>

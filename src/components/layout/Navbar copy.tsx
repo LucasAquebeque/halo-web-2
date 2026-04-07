@@ -11,38 +11,33 @@ export default function Navbar() {
       setScrolled(window.scrollY > 50);
     };
 
-    handleScroll(); // 🔥 importante para refresh
+    handleScroll();
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
     <header
-      className={`fixed top-10 left-0 w-full z-50 transition-all duration-500 ${
-        scrolled
-          ? "bg-black/50 backdrop-blur-xl border-b border-white/10"
-          : "bg-black/20 backdrop-blur-sm"
+      className={`fixed top-[36px] left-0 w-full z-50 transition-all duration-300 ${
+        scrolled ? "bg-black/80 backdrop-blur-md" : "bg-transparent"
       }`}
     >
-      <div
-        className={`max-w-7xl mx-auto px-6 flex items-center justify-between transition-all duration-500 ${
-          scrolled ? "h-[80px]" : "h-[110px]"
-        }`}
-      >
-        {/* LOGO DINÁMICO */}
+      <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-[90px]">
+
+        {/* LOGO */}
         <div
-          className={`relative transition-all duration-500 -ml-6 md:-ml-10 ${
+          className={`relative transition-all duration-500 -ml-6 md:-ml-16 ${
             scrolled
-              ? "w-[220px] md:w-[260px] h-[60px] md:h-[70px]"
-              : "w-[320px] md:w-[380px] h-[90px] md:h-[100px]"
+              ? "w-[220px] md:w-[260px] h-[55px] md:h-[65px]"
+              : "w-[280px] md:w-[340px] h-[75px] md:h-[85px]"
           }`}
         >
           <Image
             src="/logo_white_clean.png"
             alt="Halo"
             fill
-            sizes="(max-width: 768px) 220px, 380px"
-            className="object-contain"
+            sizes="(max-width: 768px) 280px, 340px"
+            className="object-contain object-left"
             priority
           />
         </div>
@@ -56,6 +51,7 @@ export default function Navbar() {
           <a href="#insights" className="nav-link">Insights</a>
           <a href="#contact" className="nav-link">Contact</a>
         </nav>
+
       </div>
     </header>
   );
